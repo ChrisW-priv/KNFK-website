@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0ay4-!_7_s3)r!ox5)fj98arbjnygvqz=_^b!0+xdj&ksee1#5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www-knfk.fizyka.pw.edu.pl', 'www.knfk.fizyka.pw.edu.pl']
+ALLOWED_HOSTS = ['www-knfk.fizyka.pw.edu.pl', 'www.knfk.fizyka.pw.edu.pl', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = 'static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
