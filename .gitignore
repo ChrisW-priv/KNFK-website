@@ -1,6 +1,6 @@
 __pycache__/ 
 *.sock
 static/
-media/
+media/profile_pics/*
 db.*
 venv/
