@@ -19,6 +19,11 @@ class PostListView(ListView):
 
     paginate_by = 5
 
+    def get_context_data(self,*args, **kwargs):
+        context = super(PostListView, self).get_context_data(*args,**kwargs)
+        context['show_sidebar'] = True
+        return context
+
 
 class UserPostListView(ListView):
     model = Post

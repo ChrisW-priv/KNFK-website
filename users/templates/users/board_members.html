@@ -1,0 +1,80 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <style>
+    .centered-text {
+      text-align: center;
+      text-align-last: justify;
+      text-justify: inter-word;
+      initial-letter-align: hanging;
+    }
+  </style>
+<div class="container">
+    <h1 class="text-center">Zarząd</h1>
+
+    <div class="row text-center">
+        <div class="col-md-6">
+            <img class="" src="/media/foty-zarzad-wybrane/krzysztof.JPG" width="250px">
+            <h3 class="text-center">Krzysztof Watras</3>
+        </div>
+        <div class="col-md-6 text-justify">
+            <p>
+            <strong>Krzysztof Watras</strong>
+            jest prezesem Koła Naukowego Fizyki Komputerowej. Jako specjalista
+            w&nbsp;dziedzinie pythona, prowadził warsztaty dla nowych członków, żeby 
+            pomóc im w&nbsp;stawianiu pierwszych kroków w&nbsp;programowaniu. Głęboko 
+            wierzy, że prawdziwy sukces bierze się z&nbsp;dobrych systemów i&nbsp;nawyków 
+            zamiast z&nbsp;jednorazowych zwycięstw. Skupia się na doskonaleniu 
+            procesów i&nbsp;tworzeniem narzędzi które ułatwiają pracę innym. 
+            </p>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-6">
+            <img class="" src="/media/foty-zarzad-wybrane/wiktoria.JPG" width="250px">
+            <h3 class="text-center">Wiktoria Szopa</3>
+        </div>
+        <div class="col-md-6 text-justify">
+            <p>
+            <strong>Wiktoria Szopa</strong>
+            jest wiceprezeską Koła Naukowego Fizyki Komputerowej. Jest 
+            nieocenionym wsparciem dla wszystkich członków służąc informacją i&nbsp;
+            radą. Jest odpowiedzialna za organizacją eventów jak i&nbsp;szukanie
+            nowych projektów, dla człoków koła którzy chcą nauczyć się czegoś 
+            nowego.
+            </p>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-6">
+            <img class="" src="/media/foty-zarzad-wybrane/maciek.JPG" width="250px">
+            <h3 class="text-center">Maciej Standerski</3>
+        </div>
+        <div class="col-md-6 text-justify">
+            <p>
+            <strong>Maciej Standerski</strong>
+            jest skarbnikiem Koła Naukowego Fizyki Komputerowej. Jego bogate 
+            doświadczenie w&nbsp;programowaniu jest powodem jego częstego udziału w&nbsp;
+            projektach i&nbsp;szerzeniu wiedzy. Jako skarbnik organizuje fundusze, 
+            które potem można wykorzystać do wykonania projektów praktycznych. 
+            </p>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-6">
+            <img class="" src="/media/foty-zarzad-wybrane/kuba.JPG" width="250px">
+            <h3 class="text-center">Kuba Jaroszewski</3>
+        </div>
+        <div class="col-md-6 text-justify">
+            <p>
+            <strong>Kuba Jaroszewski</strong>
+            w&nbsp;Kole Naukowym Fizyki Komputerowej jest członkiem zarządu do spraw
+            ogólnych (a&nbsp;może nawet specjalych?). Jego pomoc w&nbsp;codziennym
+            działaniu koła jak i&nbsp;udział w&nbsp;projektach jest cennym wsparciem dla
+            reszty zarządu. Zawsze chętny do pomocy, ambitny i&nbsp;konkretny.
+            </p>
+        </div>
+    </div>
+</div>
+<!-- epic easteregg!!! (linux command to prevent single letters from appearing) -->
+<!-- sed 's/\b\([a-zA-Z]\) /\1\&nbsp;/g' board_members.html -i&nbsp;-->
+{% endblock content %}

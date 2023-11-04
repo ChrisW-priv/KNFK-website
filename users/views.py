@@ -39,3 +39,7 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
+
+
+def present_board_members(request):
+    return render(request, 'users/board_members.html')
