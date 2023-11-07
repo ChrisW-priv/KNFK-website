@@ -16,3 +16,16 @@ services:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
 
+  nginx:
+      build: ./nginx
+      restart: always
+      ports:
+        - 80:80
+      networks:
+        - nginx_network
+      depends_on:
+        - web
+
+networks:
+  nginx_network:
+    driver: bridge
