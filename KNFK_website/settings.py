@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0ay4-!_7_s3)r!ox5)fj98arbjnygvqz=_^b!0+xdj&ksee1#5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www-knfk.fizyka.pw.edu.pl', 'www.knfk.fizyka.pw.edu.pl', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

@@ -1,4 +1,6 @@
 #!/bin/sh
 
-python manage.py collectstatic --no-input
-gunicorn --workers 4 --bind unix:main.sock -m 007 KNFK_website.wsgi:application
+set -e
+
+python3 manage.py collectstatic --no-input
+gunicorn KNFK_website.wsgi:application --bind 0.0.0.0:8000 

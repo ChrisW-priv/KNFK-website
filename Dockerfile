@@ -1,18 +1,12 @@
-FROM python:3.11
-
-WORKDIR /app
+FROM python:3.11 as builder
 
 COPY ./requirements.txt ./
-
 RUN pip install -r ./requirements.txt
 
-COPY . .
+COPY . /app/
+WORKDIR /app
 
-RUN python3 manage.py collectstatic
-
-ENV PORT=8000
-
-EXPOSE 8000
+COPY ./entrypoint.sh /
 
 CMD ["./entrypoint.sh"]
 
