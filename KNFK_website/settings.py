@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0ay4-!_7_s3)r!ox5)fj98arbjnygvqz=_^b!0+xdj&ksee1#5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www-knfk.fizyka.pw.edu.pl', 'website']
+ALLOWED_HOSTS = ['www-knfk.fizyka.pw.edu.pl', 'website', '0.0.0.0']
 CSRF_TRUSTED_ORIGINS = ['http://www-knfk.fizyka.pw.edu.pl', 'http://0.0.0.0']
 
 
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'KNFK_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'database/db.sqlite3',
     }
 }
 

@@ -2,5 +2,4 @@ __pycache__/
 *.sock
 static/
 media/profile_pics/*
-db.*
 venv/
