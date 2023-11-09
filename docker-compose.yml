@@ -9,7 +9,7 @@ services:
     volumes:
       - static:/app/static
       - media:/app/media
-      - db.sqlite3:/var/lib/postgresql/data  # Persist database data
+      - database:/app/database
 
   nginx:
       build: ./nginx
@@ -25,4 +25,4 @@ services:
 volumes:
   static:
   media:
-  db.sqlite3:
+  database:
