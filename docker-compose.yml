@@ -2,6 +2,7 @@ version: '3'
 
 services:
   web:
+    image: kwdockerhub/web:latest
     build:
       context: .
     ports:
@@ -12,15 +13,16 @@ services:
       - database:/app/database
 
   nginx:
-      build: ./nginx
-      volumes:
-        - static:/app/static
-        - media:/app/media
-      restart: always
-      ports:
-        - "80:80"
-      depends_on:
-        - web
+    image: kwdockerhub/nginx:latest
+    build: ./nginx
+    volumes:
+      - static:/app/static
+      - media:/app/media
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - web
 
 volumes:
   static:
