@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-0ay4-!_7_s3)r!ox5)fj98arbjnygvqz=_^b!0+xdj&ksee1#5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www-knfk.fizyka.pw.edu.pl', 'www.knfk.fizyka.pw.edu.pl', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['www-knfk.fizyka.pw.edu.pl', 'website', '0.0.0.0']
+CSRF_TRUSTED_ORIGINS = ['http://www-knfk.fizyka.pw.edu.pl', 'http://0.0.0.0']
 
 
 # Application definition
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'KNFK_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'database/db.sqlite3',
     }
 }
 
@@ -121,15 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-if DEBUG:
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static')
-   ]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

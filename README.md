@@ -1,13 +1,24 @@
 # KNFK website repo
-This entire repo is used to host code for our main website advertising our
-club.
+This repo is used to host code for our main website of our club.
 
 ## Hosting and setup
 Our website is hosted on our private server in faculty of physics in Warsaw
-University of Technology.
+University of Technology. 
 
-Code running is located in VM called kubit01 to which only the admin has
-access.
+Current URL: 
+```
+www-knfk.fizyka.pw.edu.pl
+```
+Current IP:
+```
+194.29.174.207
+```
+
+## For developers:
+Our server is virtualised into multiple pools. This site is hosted on pool
+`kubit01`. Only admin has access to it (only he knows the password).
+
+VM that is actually running the site is called `siteHostingVm`
 
 To replicate exact state of current server following steps need to be taken:
 - Create new VM
@@ -16,67 +27,17 @@ To replicate exact state of current server following steps need to be taken:
       cores should be allocated.
     - Setup OS
     - Connect to internet
-- Clone the repo to VM:
-```bash
-git clone https://github.com/ChrisW-priv/KNFK-website.git
-```
-- Replicate virtual environment:
-```bash
-python3 -m venv ~/env/glob/
-source ~/env/glob/bin/activate
-pip install flask gunicorn
-```
-- Bind wsgi to host:
-```bash
-gunicorn --bind 0.0.0.0:5000 wsgi:app
-```
-- Create a systemd service to automaticaly start website on VM boot
-```bash
-sudo vim /etc/systemd/system/website.service
-```
-And paste text from below:
-```
-[Unit]
-Description=Gunicorn instance to serve Flask website app
-After=network.target
+- Setup docker
+    - install docker
+    - login as user
+    - pull images
+    - copy docker compose
+    - run docker compose 
 
-[Service]
-User=ubuntu-server
-Group=www.data
-WorkingDirectory=/home/ubuntu-server/knfk_site
-Environment=/home/ubuntu-server/env/glob/bin
-ExecStart=/home/ubuntu-server/env/glob/bin/gunicorn --workers 3 --bind unix:main.sock -m 007 wsgi:app
+After all this you should have a running site available from outside server.
 
-[Install]
-WantedBy=multi-user.target
-```
-And start the service:
-```bash
-sudo systemctl start website
-sudo systemctl enable website
-```
-- Setup nginx deploy:
-```bash
-sudo vim /etc/nginx/sites-available/website.conf
-```
-And paste text from below:
-```
-server {
-    listen 80;
-    server_name www-knfk.fizyka.pw.edu.pl
+Now, the only thing left to do is for you to beg the PW IT department to update 
+DNS to map VMs IP to www-knfk.fizyka.pw.edu.pl (new VMs ip almost certainly
+will have different IP than it has now but if you manage to have change it to
+`194.29.174.207` then there should be no issue).
 
-    location / {
-        include proxy_params;
-        proxy_pass http://unix:/home/ubuntu-server/knfk_site/main.sock;
-    }
-}
-```
-Create symlink and restart nginx:
-```bash
-sudo ln -s /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled/
-sudo systemctl restart nginx
-```
-Finally to prevent 502 error we need to change permitions:
-```bash
-sudo chmod 775 /home/ubuntu-server/
-```
