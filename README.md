@@ -35,15 +35,15 @@ To replicate exact state of current server following steps need to be taken:
         - run `sudo systemctl enable docker --now` to start docker deamon
         - you will likely need to add current user to docker group
         - follow this [link](https://docs.docker.com/engine/install/linux-postinstall/)
-    - copy docker compose
+- Copy docker compose
  ```bash
 curl --remote-name https://raw.githubusercontent.com/ChrisW-priv/KNFK-website/main/docker-compose.yml
 ```
-    - pull images
+- Pull images
 ```bash
 docker-compore pull
 ```
-    - run docker compose 
+- Run docker compose 
 ```bash
 docker-compose up
 ```
