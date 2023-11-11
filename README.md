@@ -14,7 +14,7 @@ Current IP:
 194.29.174.207
 ```
 
-## For developers:https://docs.docker.com/engine/install/linux-postinstall/
+## For developers:
 Our server is virtualised into multiple pools. This site is hosted on pool
 `kubit01`. Only admin has access to it (only he knows the password).
 
