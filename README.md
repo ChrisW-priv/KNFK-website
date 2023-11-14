@@ -45,11 +45,11 @@ sed '/build:/d' docker-compose.yml -i
 ```
 - Pull images
 ```bash
-docker-compore pull
+docker-compose pull
 ```
 - Run docker compose 
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
 After all this you should have a running site available from outside server.
