@@ -39,6 +39,10 @@ To replicate exact state of current server following steps need to be taken:
  ```bash
 curl --remote-name https://raw.githubusercontent.com/ChrisW-priv/KNFK-website/main/docker-compose.yml
 ```
+- Remove `build` parts:
+```bash
+sed '/build:/d' docker-compose.yml -i
+```
 - Pull images
 ```bash
 docker-compore pull
