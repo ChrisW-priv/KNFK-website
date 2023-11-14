@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0ay4-!_7_s3)r!ox5)fj98arbjnygvqz=_^b!0+xdj&ksee1#5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www-knfk.fizyka.pw.edu.pl', 'website', '0.0.0.0']
+ALLOWED_HOSTS = ['www-knfk.fizyka.pw.edu.pl', 'website', '0.0.0.0', 'localhost', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['http://www-knfk.fizyka.pw.edu.pl', 'http://0.0.0.0']
 
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'crispy_bootstrap4',
+    'markdownify.apps.MarkdownifyConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +55,42 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MARKDOWNIFY = {
+    "default": {
+        "WHITELIST_TAGS": [
+            'a',
+            'abbr',
+            'acronym',
+            'b',
+            'blockquote',
+            'em',
+            'i',
+            'table',
+            'thead',
+            'tbody',
+            'th',
+            'tr',
+            'td',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'li',
+            'ol',
+            'p',
+            'strong',
+            'ul'
+        ],
+        "MARKDOWN_EXTENSIONS": [
+            'markdown.extensions.extra',
+            'markdown.extensions.fenced_code',
+            'markdown.extensions.tables'  # Include the tables extension
+        ]
+    }
+}
 
 ROOT_URLCONF = 'KNFK_website.urls'
 
