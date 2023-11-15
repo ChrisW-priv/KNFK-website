@@ -58,6 +58,20 @@ MIDDLEWARE = [
 
 MARKDOWNIFY = {
     "default": {
+        "WHITELIST_ATTRS": [
+            'href',
+            'src',
+            'alt',
+            'class',
+        ],
+        "WHITELIST_STYLES": [
+            'color',
+            'font-weight',
+        ],        
+        "WHITELIST_PROTOCOLS": [
+            'http',
+            'https',
+        ],
         "WHITELIST_TAGS": [
             'a',
             'abbr',
@@ -66,6 +80,8 @@ MARKDOWNIFY = {
             'blockquote',
             'em',
             'i',
+            'pre',
+            'code',
             'table',
             'thead',
             'tbody',
